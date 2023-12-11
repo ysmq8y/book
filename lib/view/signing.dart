@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
+
   @override
   State<SignInPage> createState() => _SignInPageState();
 }
@@ -21,7 +23,7 @@ class _SignInPageState extends State<SignInPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            const SizedBox(
               width: 200,
               height: 100,
               child: Center(
@@ -34,7 +36,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               width: 220,
               height: 100,
               child: TextField(
@@ -47,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(50.0)),
                       hintText: "enter your username")),
             ),
-            Container(
+            SizedBox(
               width: 220,
               height: 100,
               child: TextField(
@@ -69,7 +71,6 @@ class _SignInPageState extends State<SignInPage> {
                     wrongPassword = "wrong password";
                   });
                 }
-                ;
               },
               icon: const Icon(
                 Icons.login_outlined,
@@ -83,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Text("password status ${wrongPassword}")
+            Text("password status $wrongPassword")
           ],
         ),
       ),

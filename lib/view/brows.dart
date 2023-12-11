@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: InkWell(
                       onTap: () {
                         GoRouter.of(context)
-                            .go('/book_details', extra: Books.booksList);
+                            .go('/book_details', extra: Books.booksList[index]);
                       },
                       child: Row(
                         children: [

@@ -1,3 +1,4 @@
+import 'package:book/modules/books.dart';
 import 'package:book/view/book_details.dart';
 import 'package:book/view/brows.dart';
 import 'package:book/view/signing.dart';
@@ -14,7 +15,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return SignInPage();
+        return const SignInPage();
       },
     ),
     GoRoute(
@@ -28,7 +29,9 @@ final GoRouter _router = GoRouter(
     GoRoute(
         path: "/book_details",
         builder: (BuildContext context, GoRouterState state) {
-          return BookDetails();
+          final Books selectedBook = state.extra as Books;
+
+          return BookDetails(book: selectedBook);
         })
   ],
 );
