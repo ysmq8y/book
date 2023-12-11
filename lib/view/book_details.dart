@@ -112,31 +112,31 @@ class _BookDetailsState extends State<BookDetails> {
                           borderRadius: BorderRadius.circular(50.0)),
                       hintText: "please write your review")),
             ),
-            Scrollbar(
-              controller: _scrollController,
-              child: ListView.builder(
-                  controller: _scrollController,
-                  itemCount: 100,
-                  itemBuilder: (context, index) {
-                    return Card(
-                        color: const Color.fromARGB(222, 0, 0, 0),
-                        child: SizedBox(
-                            width: 200,
-                            height: 100,
-                            child: Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Row(children: [
-                                  Expanded(
-                                      child: Text(
-                                    widget.book.bookReview[index],
-                                    style: const TextStyle(
-                                        fontSize: 15.0,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                                ]))));
-                  }),
-            ),
+            // Scrollbar(
+            //   controller: _scrollController,
+            //   child: ListView.builder(
+            //       controller: _scrollController,
+            //       itemCount: 100,
+            //       itemBuilder: (context, index) {
+            //         return Card(
+            //             color: const Color.fromARGB(222, 0, 0, 0),
+            //             child: SizedBox(
+            //                 width: 200,
+            //                 height: 100,
+            //                 child: Padding(
+            //                     padding: const EdgeInsets.all(4.0),
+            //                     child: Row(children: [
+            //                       Expanded(
+            //                           child: Text(
+            //                         widget.book.bookReview[index],
+            //                         style: const TextStyle(
+            //                             fontSize: 15.0,
+            //                             color: Colors.white,
+            //                             fontWeight: FontWeight.bold),
+            //                       )),
+            //                     ]))));
+            //       }),
+            // ),
           ],
         ),
       ),
