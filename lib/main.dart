@@ -1,3 +1,4 @@
+import 'package:book/view/book_details.dart';
 import 'package:book/view/brows.dart';
 import 'package:book/view/signing.dart';
 import 'package:flutter/material.dart';
@@ -19,11 +20,16 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/brows',
       builder: (BuildContext context, GoRouterState state) {
-        return MyHomePage(
+        return const MyHomePage(
           title: 'browse',
         );
       },
     ),
+    GoRoute(
+        path: "/book_details",
+        builder: (BuildContext context, GoRouterState state) {
+          return BookDetails();
+        })
   ],
 );
 
