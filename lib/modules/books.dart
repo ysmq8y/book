@@ -24,7 +24,7 @@ class Books {
         bookRating: "4.6/5"),
     Books(
         bookImage: "${path}harry.jpg",
-        bookName: "Harry Potter and the Prisoner of Azkaban",
+        bookName: "Harry Potter and the Prisoner ",
         bookReview: ["great", "amazing"],
         bookRating: "4.8/5"),
     Books(

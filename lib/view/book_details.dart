@@ -12,7 +12,7 @@ class BookDetails extends StatefulWidget {
 
 class _BookDetailsState extends State<BookDetails> {
   final reviewEditor = TextEditingController();
-  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +75,7 @@ class _BookDetailsState extends State<BookDetails> {
                 children: [
                   Text(
                     "Book name:",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     widget.book.bookName,
@@ -112,31 +112,34 @@ class _BookDetailsState extends State<BookDetails> {
                           borderRadius: BorderRadius.circular(50.0)),
                       hintText: "please write your review")),
             ),
-            // Scrollbar(
-            //   controller: _scrollController,
-            //   child: ListView.builder(
-            //       controller: _scrollController,
-            //       itemCount: 100,
-            //       itemBuilder: (context, index) {
-            //         return Card(
-            //             color: const Color.fromARGB(222, 0, 0, 0),
-            //             child: SizedBox(
-            //                 width: 200,
-            //                 height: 100,
-            //                 child: Padding(
-            //                     padding: const EdgeInsets.all(4.0),
-            //                     child: Row(children: [
-            //                       Expanded(
-            //                           child: Text(
-            //                         widget.book.bookReview[index],
-            //                         style: const TextStyle(
-            //                             fontSize: 15.0,
-            //                             color: Colors.white,
-            //                             fontWeight: FontWeight.bold),
-            //                       )),
-            //                     ]))));
-            //       }),
-            // ),
+            Container(
+              width: 800,
+              height: 80,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: widget.book.bookReview.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                        color: const Color.fromARGB(222, 0, 0, 0),
+                        child: SizedBox(
+                            width: 300,
+                            height: 100,
+                            child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Row(children: [
+                                  Expanded(
+                                      child: Center(
+                                    child: Text(
+                                      widget.book.bookReview[index],
+                                      style: const TextStyle(
+                                          fontSize: 15.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  )),
+                                ]))));
+                  }),
+            ),
           ],
         ),
       ),
